@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Instruktor\\Desktop\\kursStuff\\c\\dec5circle\\kurs\\temperatureconverter\\temperature\\temperature.csproj",
+      "projectUniqueName": "C:\\Users\\Instruktor\\Desktop\\kursStuff\\kurs\\temperatureconverter\\temperature\\temperature.csproj",
       "projectName": "temperature",
-      "projectPath": "C:\\Users\\Instruktor\\Desktop\\kursStuff\\c\\dec5circle\\kurs\\temperatureconverter\\temperature\\temperature.csproj",
+      "projectPath": "C:\\Users\\Instruktor\\Desktop\\kursStuff\\kurs\\temperatureconverter\\temperature\\temperature.csproj",
       "packagesPath": "C:\\Users\\Instruktor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Instruktor\\Desktop\\kursStuff\\c\\dec5circle\\kurs\\temperatureconverter\\temperature\\obj\\",
+      "outputPath": "C:\\Users\\Instruktor\\Desktop\\kursStuff\\kurs\\temperatureconverter\\temperature\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

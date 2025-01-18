@@ -21,8 +21,9 @@
   <body>
     <div id="main-container" class="container mt-5">
       <h1 class="text-center">Temperature Converter</h1>
-      <form id="conversionForm" class="mt-4"></form>
+      <form id="conversionForm" class="mt-4">
       <div class="convert-container">
+        <form id="form-input">
         <input
           type="number"
           class="form-control"
@@ -31,51 +32,32 @@
           aria-describedby="basic-addon1"
           required
         />
-        <span id="from"
-          ><h3>From:</h3>
-          <div class="input-group mb-3">
-            <button
-              class="btn btn-outline-secondary dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Select unit
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Celsius (°C)</a></li>
-              <li><a class="dropdown-item" href="#">Fahrenheit (°F)</a></li>
-              <li><a class="dropdown-item" href="#">Kelvin (°K)</a></li>
-            </ul>
-          </div>
-        </span>
-        <span id="to"
-          ><h3>To:</h3>
-          <div class="input-group mb-3">
-            <button
-              class="btn btn-outline-secondary dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Select unit
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Celsius (°C)</a></li>
-              <li><a class="dropdown-item" href="#">Fahrenheit (°F)</a></li>
-              <li><a class="dropdown-item" href="#">Kelvin (°K)</a></li>
-            </ul>
-            <button type="submit" class="btn btn-secondary">Convert</button>
-          </div>
-        </span>
-      </div>
-    </form>
+        
+    <div class="form-floating" id="from-container">
+      <h3>From: </h3>
+  <select class="form-select" id="fromSelect">
+    <option selected>Choose Unit</option>
+    <option value="Celsius">Celsius (°C)</option>
+    <option value="Fahrenheit">Fahrenheit (°F)</option>
+    <option value="Kelvin">Kelvin (°K)</option>
+  </select>
+</div>
+<div class="form-floating" id="from-container">
+      <h3>To: </h3>
+  <select class="form-select" id="toSelect">
+    <option selected>Choose Unit</option>
+    <option value="Celsius">Celsius (°C)</option>
+    <option value="Fahrenheit">Fahrenheit (°F)</option>
+    <option value="Kelvin">Kelvin (°K)</option>
+  </select>
+</div>
     <div class="mt-4">
             <h3>Converted Temperature:</h3>
             <p id="convertedData" class="text-success"></p>
         </div>
     </div>
-    
+    </form>
+    </div>
 
      <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

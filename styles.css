@@ -3,8 +3,13 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 55px;
+  /*    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url("background.jpg");
+  background-size: cover; */
 }
-
+.form-floating {
+  font-size: 34px;
+}
 #main-container {
   display: flex;
   flex-direction: column;
