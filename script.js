@@ -1,55 +1,41 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const fromUnitButton = document.querySelector("#from .dropdown-toggle");
-  const toUnitButton = document.querySelector("#to .dropdown-toggle");
-  const fromUnitOptions = document.querySelectorAll("#from .dropdown-item");
-  const toUnitOptions = document.querySelectorAll("#to .dropdown-item");
-  const form = document.getElementById("conversionForm");
-  const inputDataField = document.getElementById("inputData");
-  const convertedDataDisplay = document.getElementById("convertedData");
+document.querySelector("form").addEventListener("submit", async (event) => {
+  event.preventDefault();
 
-  let fromUnit = null;
-  let toUnit = null;
-  // Handle dropdown selections for "From" unit
-  fromUnitOptions.forEach((item) => {
-    item.addEventListener("click", (e) => {
-      fromUnit = e.target.textContent.trim();
-      fromUnitButton.textContent = fromUnit; // Update button text
-    });
-  });
+  const value = parseFloat(document.querySelector(".form-control").value);
+  const fromUnit = document
+    .querySelector("#from .dropdown-toggle")
+    .textContent.trim()
+    .toLowerCase();
+  const toUnit = document
+    .querySelector("#to .dropdown-toggle")
+    .textContent.trim()
+    .toLowerCase();
 
-  // Handle dropdown selections for "To" unit
-  toUnitOptions.forEach((item) => {
-    item.addEventListener("click", (e) => {
-      toUnit = e.target.textContent.trim();
-      toUnitButton.textContent = toUnit; // Update button text
-    });
-  });
-
-  // Example: Log the selected units
-  document.querySelector("form").addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (!fromUnit || !toUnit) {
-      alert("Please select both 'From' and 'To' units.");
-      return;
-    }
-    console.log(`Converting from ${fromUnit} to ${toUnit}`);
-    // You can add the conversion logic or API call here
-  });
-});
-form.addEventListener("submit", async (event) => {
-  event.preventDefault(); // Prevent default form submission
-
-  const inputData = inputDataField.value.trim();
-  if (!inputData) {
-    alert("Please enter some data!");
+  if (isNaN(value) || !fromUnit || !toUnit) {
+    alert("Please provide valid input and units.");
     return;
   }
 
-  function Calculate() {
-    let x = document.forms["myForm"]["fname"].value;
-    if (x == "") {
-      alert("Name must be filled out");
-      return false;
+  // Determine the appropriate API endpoint
+  const endpoint = `${fromUnit[0]}to${toUnit[0]}`; // Example: "ctof", "ftok"
+
+  try {
+    const response = await fetch(`/${endpoint}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ input: value }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || "Conversion failed.");
     }
+
+    const result = await response.text(); // API returns plain text (e.g., result number)
+    document.getElementById("result").textContent = `Result: ${result}`;
+  } catch (error) {
+    document.getElementById("result").textContent =
+      "Error performing conversion.";
+    console.error(error);
   }
 });

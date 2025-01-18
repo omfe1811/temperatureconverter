@@ -129,6 +129,13 @@ app.MapPost("/ktok", ([FromForm] int input) =>
 ).DisableAntiforgery();
 
 
+public class TemperatureRequest
+{
+    public double Value { get; set; }
+    public string FromUnit { get; set; }
+    public string ToUnit { get; set; }
+}
+
 
 
 

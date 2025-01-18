@@ -26,3 +26,4 @@ C:\Users\Instruktor\Desktop\kursStuff\c\dec5circle\kurs\temperatureconverter\tem
 C:\Users\Instruktor\Desktop\kursStuff\c\dec5circle\kurs\temperatureconverter\temperature\obj\Debug\net9.0\temperature.pdb
 C:\Users\Instruktor\Desktop\kursStuff\c\dec5circle\kurs\temperatureconverter\temperature\obj\Debug\net9.0\temperature.genruntimeconfig.cache
 C:\Users\Instruktor\Desktop\kursStuff\c\dec5circle\kurs\temperatureconverter\temperature\obj\Debug\net9.0\ref\temperature.dll
+C:\Users\Instruktor\Desktop\kursStuff\c\dec5circle\kurs\temperatureconverter\temperature\obj\Debug\net9.0\temperature.sourcelink.json
