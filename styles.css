@@ -17,3 +17,7 @@ body {
 #convert-container {
   display: flex;
 }
+option {
+  text-align: left;
+  padding: 10px;
+}

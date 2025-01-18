@@ -25,6 +25,7 @@
       <div class="convert-container">
         <form id="form-input">
         <input
+        id="input-number"
           type="number"
           class="form-control"
           placeholder="Enter temperature to convert"
@@ -35,8 +36,9 @@
         
     <div class="form-floating" id="from-container">
       <h3>From: </h3>
-  <select class="form-select" id="fromSelect">
-    <option selected>Choose Unit</option>
+  <select class="form-select" id="from-select" required>
+
+    <option selected value="">Choose Unit</option>
     <option value="Celsius">Celsius (°C)</option>
     <option value="Fahrenheit">Fahrenheit (°F)</option>
     <option value="Kelvin">Kelvin (°K)</option>
@@ -44,26 +46,29 @@
 </div>
 <div class="form-floating" id="from-container">
       <h3>To: </h3>
-  <select class="form-select" id="toSelect">
-    <option selected>Choose Unit</option>
+  <select class="form-select" id="to-select" required>
+    <option selected value="">Choose Unit</option>
     <option value="Celsius">Celsius (°C)</option>
     <option value="Fahrenheit">Fahrenheit (°F)</option>
     <option value="Kelvin">Kelvin (°K)</option>
   </select>
+  <button type="submit" class="btn btn-primary">Convert</button>
 </div>
+
     <div class="mt-4">
             <h3>Converted Temperature:</h3>
             <p id="convertedData" class="text-success"></p>
         </div>
     </div>
-    </form>
     </div>
+    </form>
+    
 
      <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
+    <script src="crud.js"></script>
   </body>
 </html>
