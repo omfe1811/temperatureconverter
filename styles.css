@@ -2,10 +2,17 @@ body {
   font-family: "Poiret One", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 55px;
+  padding: 10px;
   /*    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
               url("background.jpg");
   background-size: cover; */
+}
+h1 {
+  font-size: 60px;
+  padding: 10px;
+}
+input {
+  max-width: 300px;
 }
 .form-floating {
   font-size: 34px;
@@ -16,8 +23,12 @@ body {
 }
 #convert-container {
   display: flex;
+  flex-direction: row;
+}
+select {
+  max-width: 300px;
 }
 option {
-  text-align: left;
-  padding: 10px;
+  max-width: 100px;
+  text-align: center;
 }

@@ -1,29 +1,15 @@
-function celsiusConvert() {
-  let;
-}
-
 //ADD NEW PERSON
 // addPersonForm , addpersonbutton,name,age
 function addNewPerson() {
   //capture name
-  let inputNumber = document.querySelector("#input-number").value;
+  let inputNumber = document.getElementById("input-number").value;
   let fromUnit = document.querySelector("#from-select").value;
   let toUnit = document.querySelector("#to-select").value;
   // console
-  console.log(inputNumber, fromUnit);
+  console.log(inputNumber);
 }
-// we create a virtual form
-/* const formData = new FormData();
-  formData.append("Name", name);
-  formData.append("Age", age);
- */
-//FETCH POST REQUEST
-// headers watch !!!!
-//we need to write a header and send form
-//headers show what kind of data we will send
-//must be same as
-// whe we use formData browser automatically sets Content-Type
-//that is why we did not use Content-Type
+addNewPerson();
+
 /* fetch("http://localhost:5188/addperson", {
     method: "POST",
 

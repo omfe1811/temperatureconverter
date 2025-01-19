@@ -1,8 +1,22 @@
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllers();
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+    });
+});
+
+
 
 var app = builder.Build();
+
+
+app.UseCors();
 
 app.MapGet("/", () => "Hello World!");
 
@@ -129,17 +143,8 @@ app.MapPost("/ktok", ([FromForm] int input) =>
 ).DisableAntiforgery();
 
 
-public class TemperatureRequest
-{
-    public double Value { get; set; }
-    public string FromUnit { get; set; }
-    public string ToUnit { get; set; }
-}
+app.UseRouting();
 
-
-
-
-
-
+app.MapControllers();
 
 app.Run();
