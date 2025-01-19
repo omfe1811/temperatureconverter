@@ -3,32 +3,37 @@ body {
   font-weight: 400;
   font-style: normal;
   padding: 10px;
-  /*    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-              url("background.jpg");
-  background-size: cover; */
 }
+
 h1 {
   font-size: 60px;
+  font-weight: 600;
   padding: 10px;
 }
-input {
-  max-width: 300px;
+
+.convert-container {
+  max-width: 500px;
+  margin: auto;
+  font-weight: 500 !important;
 }
+
 .form-floating {
-  font-size: 34px;
+  font-size: 20px;
 }
-#main-container {
-  display: flex;
-  flex-direction: column;
-}
-#convert-container {
-  display: flex;
-  flex-direction: row;
-}
+
 select {
-  max-width: 300px;
+  max-width: 150px;
+  padding: 5px;
 }
-option {
-  max-width: 100px;
-  text-align: center;
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#convertedData {
+  font-size: 24px;
+  font-weight: bold;
+  color: green;
 }

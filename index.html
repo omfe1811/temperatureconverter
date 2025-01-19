@@ -7,69 +7,76 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Delius&family=Encode+Sans+SC:wght@100..900&family=Faculty+Glyphic&family=Geist:wght@100..900&family=IBM+Plex+Serif&family=Numans&family=Parkinsans:wght@300..800&family=Poiret+One&family=Ubuntu&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Temperature converter</title>
+    <title>Temperature Converter</title>
   </head>
   <body>
     <div id="main-container" class="container mt-5">
       <h1 class="text-center">Temperature Converter</h1>
-      <form id="conversionForm" class="mt-4">
+
       <div class="convert-container">
         <form id="form-input">
-        <input
-        id="input-number"
-          type="number"
-          class="form-control"
-          placeholder="Enter temperature to convert"
-          aria-label="Number"
-          aria-describedby="basic-addon1"
-          required
-        />
-        
-    <div class="form-floating" id="from-container">
-      <h3>From: </h3>
-  <select class="form-select" id="from-select" required>
+          <input
+            id="input-number"
+            type="number"
+            class="form-control mb-3"
+            placeholder="Enter temperature to convert"
+            aria-label="Number"
+            aria-describedby="basic-addon1"
+            required
+          />
 
-    <option selected value="">Choose Unit</option>
-    <option value="Celsius">Celsius (°C)</option>
-    <option value="Fahrenheit">Fahrenheit (°F)</option>
-    <option value="Kelvin">Kelvin (°K)</option>
-  </select>
-</div>
-<div class="form-floating" id="from-container">
-      <h3>To: </h3>
-  <select class="form-select" id="to-select" required>
-    <option selected value="">Choose Unit</option>
-    <option value="Celsius">Celsius (°C)</option>
-    <option value="Fahrenheit">Fahrenheit (°F)</option>
-    <option value="Kelvin">Kelvin (°K)</option>
-  </select>
-  <button type="submit" class="btn btn-primary">Convert</button>
-</div>
+          <div class="d-flex mb-3">
+            <!-- Using d-flex to align the selects in a row -->
+            <div class="form-floating me-2">
+              <!-- Added margin-right for spacing -->
+              <h3>From:</h3>
+              <select class="form-select" id="from-select" required>
+                <option selected value="">Choose Unit</option>
+                <option value="c">Celsius (°C)</option>
+                <option value="f">Fahrenheit (°F)</option>
+                <option value="k">Kelvin (°K)</option>
+              </select>
+            </div>
 
-    <div class="mt-4">
-            <h3>Converted Temperature:</h3>
-            <p id="convertedData" class="text-success"></p>
+            <div class="form-floating">
+              <!-- Same for the "To" dropdown -->
+              <h3>To:</h3>
+              <select class="form-select" id="to-select" required>
+                <option selected value="">Choose Unit</option>
+                <option value="c">Celsius (°C)</option>
+                <option value="f">Fahrenheit (°F)</option>
+                <option value="k">Kelvin (°K)</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary" id="submit-button">
+            Convert
+          </button>
+        </form>
+
+        <div class="mt-4">
+          <h3>Converted Temperature:</h3>
+          <p id="convertedData" class="text-success"></p>
         </div>
+      </div>
     </div>
-    </div>
-    </form>
-    
 
-     <script
-       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-  crossorigin="anonymous"
-  defer
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+      defer
     ></script>
-    <script src="crud.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

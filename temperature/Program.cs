@@ -1,27 +1,31 @@
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(builder =>
+    options.AddPolicy("allowAll", policy =>
     {
-        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        policy.AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowAnyOrigin();
+
+
     });
 });
 
 
-
 var app = builder.Build();
-
-
-app.UseCors();
-
+app.UseCors("allowAll");
 app.MapGet("/", () => "Hello World!");
 
+
 //Celsius calculations
+
 //celsius to fahrenheit
+
 app.MapPost("/ctof", ([FromForm] int input) =>
 {
     if (input.GetType() == typeof(int))
@@ -33,6 +37,7 @@ app.MapPost("/ctof", ([FromForm] int input) =>
         return Results.BadRequest(new { message = "Input must be a number" });
 }
 ).DisableAntiforgery();
+
 
 //celsius to kelvin
 
@@ -48,6 +53,7 @@ app.MapPost("/ctok", ([FromForm] int input) =>
 }
 ).DisableAntiforgery();
 
+
 //celsius to celsius
 
 app.MapPost("/ctoc", ([FromForm] int input) =>
@@ -62,9 +68,10 @@ app.MapPost("/ctoc", ([FromForm] int input) =>
 }
 ).DisableAntiforgery();
 
-//fahrenheit calculations
+
+//fahrenheit 
 //fahrenheit to celsius
-//NOT WORKING
+
 app.MapPost("/ftoc", ([FromForm] int input) =>
 {
     if (input.GetType() == typeof(int))
@@ -76,6 +83,7 @@ app.MapPost("/ftoc", ([FromForm] int input) =>
         return Results.BadRequest(new { message = "Input must be a number" });
 }
 ).DisableAntiforgery();
+
 
 //fahrenheit to kelvin
 app.MapPost("/ftok", ([FromForm] int input) =>
@@ -90,6 +98,7 @@ app.MapPost("/ftok", ([FromForm] int input) =>
 }
 ).DisableAntiforgery();
 
+
 //fahrenheit to fahrenheit
 app.MapPost("/ftof", ([FromForm] int input) =>
 {
@@ -102,7 +111,10 @@ app.MapPost("/ftof", ([FromForm] int input) =>
         return Results.BadRequest(new { message = "Input must be a number" });
 }
 ).DisableAntiforgery();
+
+
 //kelvin
+
 //kelvin to celsius
 app.MapPost("/ktoc", ([FromForm] int input) =>
 {
@@ -116,6 +128,7 @@ app.MapPost("/ktoc", ([FromForm] int input) =>
 }
 ).DisableAntiforgery();
 
+
 //kelvin to fahrenheit
 app.MapPost("/ktof", ([FromForm] int input) =>
 {
@@ -128,6 +141,7 @@ app.MapPost("/ktof", ([FromForm] int input) =>
         return Results.BadRequest(new { message = "Input must be a number" });
 }
 ).DisableAntiforgery();
+
 
 //kelvin to kelvin
 app.MapPost("/ktok", ([FromForm] int input) =>
@@ -144,7 +158,5 @@ app.MapPost("/ktok", ([FromForm] int input) =>
 
 
 app.UseRouting();
-
 app.MapControllers();
-
 app.Run();
