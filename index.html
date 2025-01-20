@@ -23,48 +23,45 @@
       <h1 class="text-center">Temperature Converter</h1>
 
       <div class="convert-container">
-        <form id="form-input">
-          <input
-            id="input-number"
-            type="number"
-            class="form-control mb-3"
-            placeholder="Enter temperature to convert"
-            aria-label="Number"
-            aria-describedby="basic-addon1"
-            required
-          />
+       
 
           <div class="d-flex">
-            <!-- Using d-flex to align the selects in a row -->
-            <div class="form-floating me-5">
-              <!-- Added margin-right for spacing -->
-              <h3>From:</h3>
-              <select class="form-select" id="from-select" required>
-                <option selected value="">Choose Unit</option>
-                <option value="c">Celsius (°C)</option>
-                <option value="f">Fahrenheit (°F)</option>
-                <option value="k">Kelvin (°K)</option>
-              </select>
-            </div>
+  <input
+    id="input-number"
+    type="number"
+    class="form-control"
+    placeholder="Enter temperature to convert"
+    aria-label="Number"
+    aria-describedby="basic-addon1"
+    required
+  />
+  <div class="form-floating">
+    <h3>From:</h3>
+    <select class="form-select" id="from-select" required>
+      <option selected value="">Choose Unit</option>
+      <option value="c">Celsius (°C)</option>
+      <option value="f">Fahrenheit (°F)</option>
+      <option value="k">Kelvin (°K)</option>
+    </select>
+  </div>
+  <div class="form-floating">
+    <h3>To:</h3>
+    <select class="form-select" id="to-select" required>
+      <option selected value="">Choose Unit</option>
+      <option value="c">Celsius (°C)</option>
+      <option value="f">Fahrenheit (°F)</option>
+      <option value="k">Kelvin (°K)</option>
+    </select>
+  </div>
+</div>
 
-            <div class="form-floating">
-              <!-- Same for the "To" dropdown -->
-              <h3>To:</h3>
-              <select class="form-select" id="to-select" required>
-                <option selected value="">Choose Unit</option>
-                <option value="c">Celsius (°C)</option>
-                <option value="f">Fahrenheit (°F)</option>
-                <option value="k">Kelvin (°K)</option>
-              </select>
-            </div>
-          </div>
 
           <button type="button" class="btn btn-primary" id="submit-button">
             Convert
           </button>
         </form>
 
-        <div class="mt-4">
+        <div class="mt-5">
           <h3>Converted Temperature:</h3>
           <p id="convertedData" class="text-success"></p>
         </div>
