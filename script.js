@@ -35,7 +35,9 @@ function temperatureConvert(
     })
     .then((data) => {
       console.log(data);
-      convertedTemperature.innerHTML = `${data}°${toUnit.toUpperCase()}`;
+      convertedTemperature.innerHTML = `${data.toFixed(
+        2
+      )}°${toUnit.toUpperCase()}`;
     })
     .catch((error) => {
       console.error("Error: ", error);
